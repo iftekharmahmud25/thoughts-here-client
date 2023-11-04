@@ -21,7 +21,7 @@ body {
 
 
 .simple-animation {
-    transition: color 0.3s ease;
+    transition: #ffff 0.3s ease;
   }
   
   .simple-animation:hover {
@@ -34,6 +34,7 @@ body {
     background: linear-gradient(to right, #e4ebff , #fbffef);
   }
 
+ 
 
 
   
