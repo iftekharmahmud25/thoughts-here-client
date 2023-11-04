@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.simple-animation {
+    transition: color 0.3s ease;
+  }
+  
+  .simple-animation:hover {
+    color: #f0ebe3; 
+  }
+
+
+
+  .hero-bg {
+    background: linear-gradient(to right, #e4ebff , #fbffef);
+  }
+
+
+
+  
