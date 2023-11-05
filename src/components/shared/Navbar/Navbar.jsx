@@ -1,6 +1,21 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../provider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                navigate('/')
+                toast("You are successfully sign out");
+            })
+            .catch()
+    }
+
     return (
         <div className="navbar bg-black text-white ms-0 ps-5 me-0 pe-5">
             <div className="navbar-start">
@@ -9,10 +24,10 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black text-white rounded-box w-52">
-                    <li><Link>All Blogs</Link></li>
-                    <li><Link>Add A Blogs</Link></li>
-                    <li><Link>Featured Blogs</Link></li>
-                    <li><Link>Wishlist</Link></li>
+                        <li><Link>All Blogs</Link></li>
+                        <li><Link>Add A Blogs</Link></li>
+                        <li><Link>Featured Blogs</Link></li>
+                        <li><Link>Wishlist</Link></li>
                     </ul>
                 </div>
                 <Link to='/'>
@@ -32,8 +47,32 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/login'><p className="uppercase text-sm underline underline-offset-4 tracking-[0.0.5em] simple-animation">log in</p></Link>
+                {
+                    user && <div className="flex items-center">
+                        <p className="md:pe-3 pe-1">
+                            <div className="rounded-full border-2 border-white">
+                                <img
+                                    className="rounded-full w-8 h-8"
+                                    title={user.displayName}
+                                    src={user.photoURL}
+                                    alt=""
+                                />
+                            </div>
+                        </p>
+                    </div>
+                }
+
+                {
+                    user ?
+                        <button onClick={handleSignOut}><p className="uppercase text-sm underline underline-offset-4 tracking-[0.0.5em] simple-animation">Log out</p></button>
+                        :
+
+                        <Link to='/login'><p className="uppercase text-sm underline underline-offset-4 tracking-[0.0.5em] simple-animation">log in</p></Link>
+                }
+
+                {/* <Link to='/login'><p className="uppercase text-sm underline underline-offset-4 tracking-[0.0.5em] simple-animation">log in</p></Link> */}
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };
