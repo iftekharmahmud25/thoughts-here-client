@@ -122,8 +122,7 @@ const AddBlog = () => {
                     <label className='label-text font-semibold me-3' htmlFor="longDescription">Long Description:</label>
                     <textarea
                         id="longDescription"
-                        name="longDescription"
-                       
+                        name="longDescription" 
                         className="input input-bordered w-[50%] h-[100px] text-xs mx-auto rounded-md"
                         value={formData.longDescription}
                         onChange={handleChange}

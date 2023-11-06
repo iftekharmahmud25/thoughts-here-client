@@ -16,7 +16,7 @@ const FeaturedBlogs = () => {
 
     const topPosts = allBlogs
         .slice()
-        .sort((a, b) => b.longDescription.split(" ").length - a.longDescription.split(" ").length) // 
+        .sort((a, b) => b.longDescription.split(" ").length - a.longDescription.split(" ").length)  
         .slice(0, 10);
 
 
@@ -55,8 +55,8 @@ const FeaturedBlogs = () => {
 
     return (
         <div>
+            <p className="title-style">Read Top 10 Blog Posts</p>
             <DataTable
-                title="Top 10 Posts"
                 columns={columns}
                 data={data}
             />
