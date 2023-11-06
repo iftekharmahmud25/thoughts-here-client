@@ -8,7 +8,7 @@ const NewsSletter = () => {
     const [subscribed, setSubscribed] = useState(false);
 
     return (
-        <div className="hero h-[200px] bg-pink-100 my-20" >
+        <div className="hero h-[200px] bg-emerald-50 my-20" >
             <div className="hero-overlay "></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md subscribe-text">

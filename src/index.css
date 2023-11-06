@@ -19,13 +19,18 @@ body {
     font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+textarea {
+  box-sizing: content-box;
+}
+
+
 
 .simple-animation {
     transition: #ffff 0.3s ease;
   }
   
-  .simple-animation:hover {
-    color: #f0ebe3; 
+  .simple-color:hover {
+    color: #bbac93; 
   }
 
 
