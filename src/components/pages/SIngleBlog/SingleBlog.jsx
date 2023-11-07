@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
-const SingleBlog = ({ singleBlog, onDetailsClick }) => {
+const SingleBlog = ({ singleBlog }) => {
 
 
     const { _id, title, imageUrl, shortDescription, category, longDescription, ownerName, OwnerPhoto, timestamp } = singleBlog;

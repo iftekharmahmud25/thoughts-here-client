@@ -1,10 +1,12 @@
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddBlog = () => {
     const { user } = useContext(AuthContext)
+    const navigate =useNavigate()
     const [formData, setFormData] = useState({
         title: '',
         imageUrl: '',
@@ -15,6 +17,7 @@ const AddBlog = () => {
     });
 
     const handleChange = (e) => {
+        
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
@@ -29,6 +32,7 @@ const AddBlog = () => {
 
         const blogData = {
             ...formData,
+            email:user.email,
             OwnerName: user.displayName,
             ownerPhoto: user.photoURL,
             timestamp: currentTime,
@@ -46,6 +50,7 @@ const AddBlog = () => {
 
             if (response.ok) {
                 toast('Blog created successfully')
+                navigate('/')
                 console.log('Blog created successfully');
             } 
         } catch (error) {
@@ -104,6 +109,7 @@ const AddBlog = () => {
                         <option value="Parenting">Parenting</option>
                         <option value="Personal Development">Personal Development</option>
                         <option value="History and Culture">History and Culture</option>
+                        <option value="Astronomy">Astronomy</option>
                     </select>
                 </div>
                 <div className='my-6'>
