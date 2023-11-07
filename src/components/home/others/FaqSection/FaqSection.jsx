@@ -4,23 +4,17 @@ const FaqSection = () => {
         title: "Ask About Us",
         rows: [
             {
-                title: "Lorem ipsum dolor sit amet,",
-                content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-                  ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-                  In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-                  Fusce sed commodo purus, at tempus turpis.`,
+                title: "How do I create an account on the website?",
+                content: `To create an account, click on the "Sign Up" or "Register" button on the homepage. You will be prompted to enter your email address, choose a username, and create a password. Follow the on-screen instructions to complete the registration process.`,
             },
             {
-                title: "Nunc maximus, magna at ultricies elementum",
+                title: "How do I submit a blog post or article?",
                 content:
-                    "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.",
+                    "To submit a post, log in to your account and go to your dashboard. Click on Add a blog and start creating your content. You can add text, images, and media, format your post, and then submit it for review.",
             },
             {
-                title: "Curabitur laoreet, mauris vel blandit fringilla",
-                content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem.
-                Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam.
-                Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat.
-                Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+                title: "Is there a limit to the number of posts I can publish?",
+                content: ` There is no limit to the number of posts you can publish. You are free to publish as many posts as you like. `,
             },
             {
                 title: "What is the package version",
