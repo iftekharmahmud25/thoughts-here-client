@@ -54,7 +54,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user && <div className="flex items-center">
-                        <p className="md:pe-3 pe-1">
+                        <div className="md:pe-3 pe-1">
                             <div className="rounded-full border-2 border-white">
                                 <img
                                     className="rounded-full w-8 h-8"
@@ -63,7 +63,7 @@ const Navbar = () => {
                                     alt=""
                                 />
                             </div>
-                        </p>
+                        </div>
                     </div>
                 }
 
