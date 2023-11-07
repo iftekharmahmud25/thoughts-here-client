@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Navigate, useLoaderData } from "react-router-dom";
+import { Link, Navigate, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { toast } from "react-toastify";
 
@@ -59,12 +59,19 @@ const BlogDetails = () => {
         <div className="w-[80%] mx-auto">
             <p className="mb-8 whitespace-normal mt-16 md:mt-20 font-bold text-center text-xl md:text-4xl">{blogDetailsInfo?.title}</p>
             <img className="w-[90%] md:w-[70%] h-[130px] md:h-[300px] mx-auto mb-12 rounded-sm shadow-xl" src={blogDetailsInfo?.imageUrl} alt="blog photo" />
-            <div className="flex gap-2 items-center">
-                <img className="w-12 h-12 rounded-full" src={blogDetailsInfo?.ownerPhoto} alt="blog owner" />
+            <div className="flex gap-2 items-center justify-between">
+               <div className="flex gap-2">
+               <img className="w-12 h-12 rounded-full" src={blogDetailsInfo?.ownerPhoto} alt="blog owner" />
                 <div>
                     <p className="font-semibold">{blogDetailsInfo.OwnerName}</p>
                     <p>{timestamp}</p>
                 </div>
+               </div>
+                {isCurrentUserBlogOwner && (
+          <Link to={`/update-blog/${blogDetailsInfo._id}`}>
+            <img width="30" height="30" src="https://img.icons8.com/flat-round/64/loop.png" alt="loop"/>
+          </Link>
+        )}
             </div>
             <p className="capitalize my-4 font-semibold text-lg md:text-2xl">{blogDetailsInfo?.shortDescription}</p>
             <p className="indent-12 text-base text-justify mb-6 text-gray-700">{blogDetailsInfo?.longDescription}</p>
