@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const Wishlist = () => {
     const [wishlistBlogs, setWishlistBlogs] = useState([]);
-
+    
     const { user } = useContext(AuthContext);
 
 
@@ -30,8 +30,9 @@ const Wishlist = () => {
                 console.log(data.message);
 
                 setWishlistBlogs((prevBlogs) => prevBlogs.filter((blog) => blog.title !== blogTitle));
-                toast.success('deleted successfully')
                 window.location.reload();
+                toast.success('deleted successfully')
+                
             })
             .catch((error) => {
                 console.error("Error removing the blog from the wishlist:", error);

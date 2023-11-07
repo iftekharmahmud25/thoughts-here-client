@@ -58,10 +58,10 @@ const SingleBlog = ({ singleBlog }) => {
                     <div className='flex gap-4 items-center mt-7'>
                         <Link to={`/blogs/${_id}`}>
                         
-                            <img width="32" height="32" src="https://img.icons8.com/pastel-glyph/64/F25081/view-file--v2.png" title='Details' alt="details" />
+                            <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/F25081/bulleted-list.png"  title='Details' alt="details" />
                         </Link>
                         <button onClick={handleAddToWishlist}>
-                        <img width="32" height="32" src="https://img.icons8.com/ios-filled/50/F25081/love-circled.png" title='Add this blog to your wishlist' alt="add to wishlist"/>
+                        <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/F25081/love-circled.png" title='Add this blog to your wishlist' alt="add to wishlist"/>
                         </button>
                     </div>
                 </div>

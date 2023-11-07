@@ -20,7 +20,10 @@ const AllBlogs = () => {
         <div>
             <p className="title-style">Check Out All of our Blogs</p>
             {isLoading ? (
-              <div >
+              <div className="mb-28">
+                  <Loader></Loader>
+                  <Loader></Loader>
+                  <Loader></Loader>
                   <Loader></Loader>
               </div>
             ) : (

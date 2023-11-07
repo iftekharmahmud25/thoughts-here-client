@@ -2,8 +2,8 @@
 
 const Loader = () => {
     return (
-        <div className="mb-24">
-            <div className="border border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto loading-skeleton">
+        <div className="mb-16">
+            <div className="border border-blue-300 shadow rounded-md h-[200px] p-4 max-w-sm w-full mx-auto loading-skeleton">
                     <div className="animate-pulse flex space-x-4">
                         <div className="rounded-full bg-slate-200 h-10 w-10"></div>
                         <div className="flex-1 space-y-6 py-1">
