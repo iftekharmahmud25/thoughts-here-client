@@ -32,7 +32,7 @@ const AddBlog = () => {
 
         const blogData = {
             ...formData,
-            email:user.email,
+            email:user.email, 
             OwnerName: user.displayName,
             ownerPhoto: user.photoURL,
             timestamp: currentTime,

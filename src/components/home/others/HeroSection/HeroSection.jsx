@@ -14,7 +14,7 @@ const HeroSection = () => {
                                 <p>Discover Insights and Inspiration</p>
                         </div>
                         <div className="flex pt-4 items-center gap-4">
-                            <Link>
+                            <Link to='/AllBlogs'>
                                 <button className="btn bg-[#f0ebe3] text-black rounded-sm shadow-xl">Get Started</button>
                             </Link>
                             <div className="hidden md:block">

@@ -38,10 +38,19 @@ const AllBlogs = () => {
     <div>
       <p className="title-style">Check Out All of our Blogs</p>
 
-     <div className="flex justify-center gap-2 mb-12">
-     <select
+     <div className="md:flex justify-center items-center gap-2 mb-12 w-[95%] mx-auto">
+     
+
+      <input
+        type="text"
+        placeholder="Search by title"
+        className="h-6 md:h-10 outline-pink-300 rounded-md ps-2 mb-4 md:mb-0 outline"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <select
         value={categoryFilter}
-        className=""
+        className="h-6 md:h-10 "
         onChange={(e) => setCategoryFilter(e.target.value)}
       >
         <option value="">All Categories</option>
@@ -53,14 +62,6 @@ const AllBlogs = () => {
           )
         )}
       </select>
-
-      <input
-        type="text"
-        placeholder="Search by title"
-        className="h-10 outline-pink-300 rounded-md ps-2  outline"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
      </div>
 
       {isLoading ? (

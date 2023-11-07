@@ -19,6 +19,10 @@ const RecentBlogs = () => {
 
     return (
         <div className="my-24">
+            <div className="w-[80%] mx-auto">
+            <h1 className="text-3xl font-semibold ">Discover Our Latest Blog Posts</h1>
+            <p className="text-gray-700">Stay Informed and Inspired with Our Fresh Content</p>
+            </div>
             {isLoading ? (
                 <div className="mb-28">
                     <Loader></Loader>
