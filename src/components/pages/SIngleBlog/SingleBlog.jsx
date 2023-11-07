@@ -13,6 +13,12 @@ const SingleBlog = ({ singleBlog }) => {
 
 
     const handleAddToWishlist = async () => {
+
+        if (!user) {
+            // User is not logged in, display a message or redirect to the login page
+            toast.error('Please log in to add this blog to your wishlist.');
+            return;
+        }
         try {
             const blogToAdd = {
                 title: title,

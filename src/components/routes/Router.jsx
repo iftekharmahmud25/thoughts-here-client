@@ -12,6 +12,7 @@ import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
 import Errorpage from "../pages/errorpage/Errorpage";
 import BlogDetails from "../pages/BlogDetails/BlogDetails";
 import DetailsBlogInWishlist from "../pages/Wishlist/DetailsBlogInWishlist";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -50,12 +51,12 @@ export const router = createBrowserRouter([
         },
         {
             path : '/blogs/:id',
-            element : <BlogDetails></BlogDetails>,
+            element : <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
             loader : ({params}) => fetch (`http://localhost:5000/blogs/${params.id}`)
         },
         {
             path: "/wishlist/:id",
-            element : <DetailsBlogInWishlist></DetailsBlogInWishlist>,
+            element : <PrivateRoute><DetailsBlogInWishlist></DetailsBlogInWishlist></PrivateRoute>,
             loader : ({params}) => fetch (`http://localhost:5000/wishlist/${params.id}`)
         }
       ]

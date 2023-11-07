@@ -8,7 +8,9 @@ const BlogDetails = () => {
     const { user } = useContext(AuthContext)
     const [commentText, setCommentText] = useState('');
     const [comments, setComments] = useState(blogDetailsInfo.comments || []);
-    console.log("User:", user);
+    const isCurrentUserBlogOwner = user && user.email === blogDetailsInfo.email;
+
+    // console.log("User:", user);
     if (!user) {
       return <Navigate to="/login" />;
     }
@@ -74,23 +76,31 @@ const BlogDetails = () => {
 
             <div className="mt-8 mb-20 border p-5">
         <h2 className="text-xl font-semibold mb-4">Comments</h2>
-        <form className="mb-4" onSubmit={addComment} >
-          <textarea
-            rows="2"
-            name="comments"
-            placeholder="Add a comment..."
-            className="w-full px-3 py-2 border rounded-md resize-none focus:outline-[#197685] focus:border-[#197685]"
-            style={{ border: "1px solid #ccc" }}
-            value={commentText}
-            onChange={(e) => setCommentText(e.target.value)}
-          ></textarea>
-          <button
-            type="submit"
-            className="bg-[#197685]  btn btn-sm hover:bg-white hover:text-[#197685] hover:border-[#197685]  hover:shadow-xl text-white h-10 px-4 rounded"
-          >
-            post
-          </button>
-        </form> <div className="rounded-lg">
+
+      {isCurrentUserBlogOwner ? (
+          <p>You cannot comment on your own blog.</p>
+        ) : (
+          <form className="mb-4" onSubmit={addComment}>
+            <textarea
+              rows="2"
+              name="comments"
+              placeholder="Add a comment..."
+              className="w-full px-3 py-2 border rounded-md resize-none focus:outline-[#197685] focus:border-[#197685]"
+              style={{ border: "1px solid #ccc" }}
+              value={commentText}
+              onChange={(e) => setCommentText(e.target.value)}
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-[#197685]  btn btn-sm hover:bg-white hover:text-[#197685] hover:border-[#197685]  hover:shadow-xl text-white h-10 px-4 rounded"
+            >
+              Post
+            </button>
+          </form>
+        )}
+        
+        
+        <div className="rounded-lg">
           {comments?.map((comment, index) => (
             <div key={index} className="mb-3 p-3 bg-gray-50 rounded-xl">
               <div className="chat chat-start">
@@ -100,12 +110,14 @@ const BlogDetails = () => {
                   </div>
                 </div>
                 <div className="chat-header">{comment.name}</div>
-                <div className="chat-bubble">{comment.text}</div>
+                <div className="chat-bubble bg-white text-black shadow-md">{comment.text}</div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+
         </div>
     );
 };
