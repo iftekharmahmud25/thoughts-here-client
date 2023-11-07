@@ -10,6 +10,7 @@ import AllBlogs from "../pages/AllBlogs/AllBlogs";
 import Wishlist from "../pages/Wishlist/Wishlist";
 import FeaturedBlogs from "../pages/FeaturedBlogs/FeaturedBlogs";
 import Errorpage from "../pages/errorpage/Errorpage";
+import BlogDetails from "../pages/BlogDetails/BlogDetails";
 
 
 export const router = createBrowserRouter([
@@ -45,6 +46,11 @@ export const router = createBrowserRouter([
         {
             path : "/FeaturedBlogs",
             element : <FeaturedBlogs></FeaturedBlogs>
+        },
+        {
+            path : '/blogs/:id',
+            element : <BlogDetails></BlogDetails>,
+            loader : ({params}) => fetch (`http://localhost:5000/blogs/${params.id}`)
         }
       ]
     },

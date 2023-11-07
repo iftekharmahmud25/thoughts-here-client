@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../../provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 
-const SingleBlog = ({ singleBlog }) => {
-    
+const SingleBlog = ({ singleBlog, onDetailsClick }) => {
+
 
     const { _id, title, imageUrl, shortDescription, category, longDescription, ownerName, OwnerPhoto, timestamp } = singleBlog;
     // console.log(singleBlog)
@@ -34,14 +34,14 @@ const SingleBlog = ({ singleBlog }) => {
                 body: JSON.stringify(blogToAdd),
             })
             console.log(response)
-            if(response.ok){
+            if (response.ok) {
                 toast.success('This Blog successfully added to your wishlist!')
             }
         }
         catch (error) {
             console.error("Error adding blog to wishlist:", error);
             toast.error("n error occurred while adding the blog to the wishlist")
-          }
+        }
     }
 
     return (
@@ -56,17 +56,20 @@ const SingleBlog = ({ singleBlog }) => {
                     <p className='text-sm text-gray-400'>{shortDescription}</p>
                     <p className='btn btn-xs bg-white text-pink-700 hover:bg-pink-700 hover:text-white text-xs mt-3 rounded-md'>Category: {category}</p>
                     <div className='flex gap-4 items-center mt-7'>
+                        {/* details btn */}
                         <Link to={`/blogs/${_id}`}>
-                        
                             <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/F25081/bulleted-list.png"  title='Details' alt="details" />
                         </Link>
+                    
+
+
                         <button onClick={handleAddToWishlist}>
-                        <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/F25081/love-circled.png" title='Add this blog to your wishlist' alt="add to wishlist"/>
+                            <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/F25081/love-circled.png" title='Add this blog to your wishlist' alt="add to wishlist" />
                         </button>
                     </div>
                 </div>
             </div>
-               <ToastContainer></ToastContainer>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

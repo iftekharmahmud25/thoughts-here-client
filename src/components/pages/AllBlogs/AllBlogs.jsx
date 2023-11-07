@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SingleBlog from "../SIngleBlog/SingleBlog";
 import Loader from "../../shared/loader/Loader";
+import { useNavigate } from "react-router-dom";
 
 
 const AllBlogs = () => {
@@ -14,7 +15,8 @@ const AllBlogs = () => {
                 setIsLoading(false); 
             })
     }, []);
-    
+
+
 
     return (
         <div>
@@ -28,7 +30,9 @@ const AllBlogs = () => {
               </div>
             ) : (
                 allBlogs.map((singleBlog) => (
-                    <SingleBlog key={singleBlog._id} singleBlog={singleBlog} />
+                    <SingleBlog key={singleBlog._id} singleBlog={singleBlog}
+                    //  onDetailsClick={() => handleDetailsClick(singleBlog)}
+                      />
                 ))
             )}
         </div>
