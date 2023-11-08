@@ -35,7 +35,7 @@ export const router = createBrowserRouter([
         },
         {
             path : "/AddBlog",
-            element : <AddBlog></AddBlog>
+            element : <PrivateRoute><AddBlog></AddBlog></PrivateRoute>
         },
         {
             path : "/AllBlogs",
@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
         },
         {
             path : "/Wishlist",
-            element : <Wishlist></Wishlist>
+            element : <PrivateRoute><Wishlist></Wishlist></PrivateRoute>
         },
         {
             path : "/FeaturedBlogs",

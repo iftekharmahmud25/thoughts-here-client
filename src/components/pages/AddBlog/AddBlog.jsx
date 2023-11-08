@@ -66,7 +66,7 @@ const AddBlog = () => {
             <form onSubmit={handleSubmit}>
                 <div className='my-6'>
                 
-                    <label className='label-text font-semibold me-3'>Title:</label>
+                    <label className='label-text font-semibold me-3 '>Title:</label>
                     <input
                         type="text"
                         id="title"
@@ -78,7 +78,7 @@ const AddBlog = () => {
                     />
                 </div>
                 <div className='my-6'>
-                    <label className='label-text font-semibold me-3' htmlFor="imageUrl">Image URL:</label>
+                    <label className='label-text font-semibold me-3 ' htmlFor="imageUrl">Image URL:</label>
                     <input
                         type="text"
                         id="imageUrl"

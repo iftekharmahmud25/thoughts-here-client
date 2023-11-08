@@ -31,14 +31,18 @@ const TopContributors = () => {
           };
         });
         contributorsArray.sort((a, b) => b.blogCount - a.blogCount);
-        setTopContributors(contributorsArray);
+
+        // Slice the contributorsArray to show only the top 3 contributors
+        const top3Contributors = contributorsArray.slice(0, 3);
+
+        setTopContributors(top3Contributors);
       });
   }, []);
 
   return (
     <div className="w-[80%] mx-auto mb-20">
       <h1 className="md:text-3xl text-base font-bold flex items-center mb-4">
-        Here is our Top Contributors{" "}
+        Here is our Top 3 Contributors{" "}
         <img
           className="ms-3"
           width="30"
@@ -48,14 +52,13 @@ const TopContributors = () => {
         />
       </h1>
 
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6">
+      <ul className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-y-6">
         {topContributors.map((contributor, index) => (
           <li key={index}>
             <img
               src={contributor.ownerPhoto}
               alt={contributor.OwnerName}
               className="rounded-full w-12 h-12 shadow-2xl"
-              
             />
             <span className="font-bold">{contributor.OwnerName}</span>
             <p>Email: {contributor.email}</p>
