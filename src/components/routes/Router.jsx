@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
         {
             path : '/blogs/:id',
             element : <PrivateRoute><BlogDetails></BlogDetails></PrivateRoute>,
-            loader : ({params}) => fetch (`http://localhost:5000/blogs/${params.id}`)
+            loader : ({params}) => fetch (`https://thoughts-here-server.vercel.app/blogs/${params.id}`)
         },
         
         {
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
             element : <PrivateRoute>
                 <DetailsInWIshList></DetailsInWIshList>
             </PrivateRoute>,
-            loader : ({params}) => fetch (`http://localhost:5000/wishlist/${params.id}`)
+            loader : ({params}) => fetch (`https://thoughts-here-server.vercel.app/wishlist/${params.id}`)
         }
       ]
     },
