@@ -32,7 +32,7 @@ const SingleBlog = ({ singleBlog }) => {
 
             }
             const response = await fetch('http://localhost:5000/wishlist', {
-                method: 'POST',
+                method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json',
                 },
