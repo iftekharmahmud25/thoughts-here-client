@@ -7,7 +7,7 @@ const RecentBlogs = () => {
     const [allBlogs, setAllBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://thoughts-here-server.vercel.app/blogs')
             .then((res) => res.json())
             .then((data) => {
                 data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));

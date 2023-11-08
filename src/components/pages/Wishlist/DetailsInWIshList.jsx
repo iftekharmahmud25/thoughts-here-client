@@ -26,7 +26,7 @@ const DetailsInWIshList = () => {
           photoUrl: user.photoURL,
         };
     
-        fetch(`http://localhost:5000/wishlist/${detailsWishlist._id}`, {
+        fetch(`https://thoughts-here-server.vercel.app/wishlist/${detailsWishlist._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

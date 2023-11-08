@@ -124,7 +124,7 @@ const Wishlist = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/wishlist?user=${user?.email}`)
+        fetch(`https://thoughts-here-server.vercel.app/wishlist?user=${user?.email}`)
             .then((response) => response.json())
             .then((data) => {
                 setWishlistBlogs(data);
@@ -135,7 +135,7 @@ const Wishlist = () => {
     }, [user?.email]);
 
     const handleRemoveBlog = (blogTitle) => {
-        fetch(`http://localhost:5000/wishlist/${blogTitle}`, {
+        fetch(`https://thoughts-here-server.vercel.app/wishlist/${blogTitle}`, {
             method: 'DELETE',
         })
             .then((response) => response.json())

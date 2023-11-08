@@ -39,7 +39,7 @@ const AddBlog = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/blogs', {
+            const response = await fetch('https://thoughts-here-server.vercel.app/blogs', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

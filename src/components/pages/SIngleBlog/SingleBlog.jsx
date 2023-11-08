@@ -31,7 +31,7 @@ const SingleBlog = ({ singleBlog }) => {
                 user: user.email,
 
             }
-            const response = await fetch('http://localhost:5000/wishlist', {
+            const response = await fetch('https://thoughts-here-server.vercel.app/wishlist', {
                 method: 'POST', 
                 headers: {
                     'Content-Type': 'application/json',

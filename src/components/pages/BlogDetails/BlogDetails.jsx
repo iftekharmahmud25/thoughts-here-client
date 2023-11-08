@@ -25,7 +25,7 @@ const BlogDetails = () => {
           photoUrl: user.photoURL,
         };
     
-        fetch(`http://localhost:5000/blogs/${blogDetailsInfo._id}`, {
+        fetch(`https://thoughts-here-server.vercel.app/blogs/${blogDetailsInfo._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

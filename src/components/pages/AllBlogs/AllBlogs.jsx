@@ -10,7 +10,7 @@ const AllBlogs = () => {
   const [searchQuery, setSearchQuery] = useState(""); 
 
   useEffect(() => {
-    fetch("http://localhost:5000/blogs")
+    fetch("https://thoughts-here-server.vercel.app/blogs")
       .then((res) => res.json())
       .then((data) => {
         setAllBlogs(data);
