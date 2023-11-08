@@ -68,7 +68,7 @@ const BlogDetails = () => {
                 </div>
                </div>
                 {isCurrentUserBlogOwner && (
-          <Link to={`/update-blog/${blogDetailsInfo._id}`}>
+          <Link >
             <img width="30" height="30" src="https://img.icons8.com/flat-round/64/loop.png" alt="loop"/>
           </Link>
         )}

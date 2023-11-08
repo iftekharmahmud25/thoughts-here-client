@@ -186,9 +186,9 @@ const Wishlist = () => {
                                                 <button onClick={() => handleRemoveBlog(blog.title)}>
                                                     <img width="20" height="20" title="remove" src="https://img.icons8.com/ios-filled/50/F25081/cancel.png" alt="cancel" />
                                                 </button>
-                                                <Link to={`./update-blog/${blog._id}`}>
-                                                    <img width="30" height="30" src="https://img.icons8.com/flat-round/64/loop.png" alt="loop" />
-                                                </Link>
+                                                <Link to={`/wishlist/${blog._id}`}><img width="20" height="20" src="https://img.icons8.com/ios-filled/50/F25081/bulleted-list.png" title="details" alt="details" /></Link>
+                                          
+
                                             </div>
                                         </div>
                                         <div className="w-[100%] mt-12 md:mt-0">
